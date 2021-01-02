@@ -1,0 +1,29 @@
+semget(0x12030448, 2, IPC_CREAT|0666)   = 65503237
+semctl(65503237, 0, SETVAL, 0x1)        = 0
+semctl(65503237, 1, SETVAL, NULL)       = 0
+semctl(65503237, 0, GETVAL, NULL)       = 1
+semctl(65503237, 1, GETVAL, NULL)       = 0
+strace: Process 4866 attached
+strace: Process 4867 attached
+[pid  4867] semop(65503237, [{0, -1, SEM_UNDO}], 1) = 0
+[pid  4866] semop(65503237, [{1, -1, SEM_UNDO}], 1 <unfinished ...>
+[pid  4867] semop(65503237, [{1, 1, SEM_UNDO}], 1) = 0
+[pid  4866] <... semop resumed> )       = 0
+[pid  4867] semop(65503237, [{0, -1, SEM_UNDO}], 1 <unfinished ...>
+[pid  4866] semop(65503237, [{0, 1, SEM_UNDO}], 1 <unfinished ...>
+[pid  4867] <... semop resumed> )       = 0
+[pid  4866] <... semop resumed> )       = 0
+[pid  4866] semop(65503237, [{1, -1, SEM_UNDO}], 1 <unfinished ...>
+[pid  4867] semop(65503237, [{1, 1, SEM_UNDO}], 1) = 0
+[pid  4866] <... semop resumed> )       = 0
+[pid  4867] semop(65503237, [{0, -1, SEM_UNDO}], 1 <unfinished ...>
+[pid  4866] semop(65503237, [{0, 1, SEM_UNDO}], 1) = 0
+[pid  4867] <... semop resumed> )       = 0
+[pid  4866] semop(65503237, [{1, -1, SEM_UNDO}], 1 <unfinished ...>
+[pid  4867] semop(65503237, [{1, 1, SEM_UNDO}], 1) = 0
+[pid  4866] <... semop resumed> )       = 0
+[pid  4867] +++ exited with 0 +++
+[pid  4866] semop(65503237, [{0, 1, SEM_UNDO}], 1) = 0
+[pid  4866] +++ exited with 0 +++
+semctl(65503237, 0, IPC_RMID, NULL)     = 0
++++ exited with 0 +++
